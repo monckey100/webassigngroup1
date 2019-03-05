@@ -9,6 +9,7 @@ require("inc/Validation.class.php");
 
 Page::$title = "Assignment 1 - Group X";
 Page::header();
+Page::form();
 Page::footer();
 
 ?>

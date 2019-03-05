@@ -20,6 +20,54 @@ class Page {
                 <h1><?php echo self::$title ;?></h1>
 <?php
     }
+    static function form() { ?>
+    <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+        <table class="table">
+        <tr>
+            <td><label for="fname">First Name</label>
+                <input type="text" name="fname">
+            </td>
+            <td><label for="lname">Last Name</label>
+                <input type="text" name="lname">
+            </td>
+        </tr>
+        <tr>
+            <td><label for="email">Email Address</label>
+                <input type="text" name="email">
+            </td>
+            <td><label for="gender">Gender</label>
+                <select name="gender">
+                    <option value=male>Male</option>
+                    <option value=female>Female</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan=3><label for="address">Stress Address</label>
+                <textarea class="text" cols="20" rows ="2" name="address"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="city">City</label>
+                <input type="text" name="city">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="country">Country</label>
+                 <input type="text" name="country">
+            </td>
+        </tr>
+        <tfoot>
+            <tr>
+                <td><input type="submit" name="submit" value="Previous"> <input type="submit" name="submit" value="Save"> <input type="submit" name="submit" value="Delete"> <input type="submit" name="submit" value="Next"></td>
+            </tr>
+        </tfoot>
+        </table>
+    </form>
+
+    <?php }
 
     static function footer() { ?>
                 <!-- Optional JavaScript -->
