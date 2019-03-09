@@ -4,6 +4,7 @@
 
 .table td {
     border: none;
+    width: 50%;
 }
 
 .table input[type=text], .table textarea, .table select {
@@ -22,6 +23,10 @@ input[type=submit] {
     border: 1px solid gainsboro;
     min-height: 50px;
     min-width: 100px;
+}
+
+input[type=submit]#prev {
+    margin-left: 10px;
 }
 
 input[type=submit]#sav {

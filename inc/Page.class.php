@@ -61,15 +61,11 @@ class Page {
                  <input type="text" name="country" value="<?php echo $fileItems[6]; ?>">
             </td>
         </tr>
-        <tfoot>
-            <tr>
-                <td><input type="submit" name="submit" value="Previous" id="prev" >
-                <input type="submit" name="submit" value="Save" id="sav" >
-                <input type="submit" name="submit" value="Delete" id="del" >
-                <input type="submit" name="submit" value="Next" id="nxt" ></td>
-            </tr>
-        </tfoot>
         </table>
+        <input type="submit" name="submit" value="Previous" id="prev" >
+        <input type="submit" name="submit" value="Save" id="sav" >
+        <input type="submit" name="submit" value="Delete" id="del" >
+        <input type="submit" name="submit" value="Next" id="nxt" >
     </form>
 
     <?php }
