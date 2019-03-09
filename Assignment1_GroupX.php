@@ -7,9 +7,12 @@ require("inc/Page.class.php");
 require("inc/Person.class.php");
 require("inc/Validation.class.php");
 
+$fileContents = FileAgent::read(DB_FILE);
+$fileContents = FileAgent::parse($fileContents);
+
 Page::$title = "Assignment #1 - Group X";
 Page::header();
-Page::form();
+Page::form($fileContents[1]);
 Page::footer();
 
 ?>

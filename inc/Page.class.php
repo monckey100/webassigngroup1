@@ -22,43 +22,43 @@ class Page {
                 <h1><?php echo self::$title ;?></h1>
 <?php
     }
-    static function form() { ?>
+    static function form($fileItems) { ?>
     <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
         <table class="table">
         <tr>
             <td><label for="fname">First Name</label> <br />
-                <input type="text" name="fname">
+                <input type="text" name="fname" value="<?php echo $fileItems[1]; ?>">
             </td>
             <td><label for="lname">Last Name</label> <br />
-                <input type="text" name="lname">
+                <input type="text" name="lname" value="<?php echo $fileItems[2]; ?>">
             </td>
         </tr>
         <tr>
             <td><label for="email">Email Address</label> <br />
-                <input type="text" name="email">
+                <input type="text" name="email" value="<?php echo $fileItems[0]; ?>">
             </td>
             <td><label for="gender">Gender</label> <br />
                 <select name="gender">
-                    <option value=male>Male</option>
-                    <option value=female>Female</option>
+                    <option value=male <?php if($fileItems[3] == "Male") { echo 'selected';} ?>>Male</option>
+                    <option value=female <?php if($fileItems[3] == "Female") { echo 'selected';} ?>>Female</option>
                 </select>
             </td>
         </tr>
         <tr>
             <td rowspan=3><label for="address">Stress Address</label> <br />
-                <textarea class="text" cols="20" rows ="2" name="address"></textarea>
+                <textarea class="text" cols="20" rows ="2" name="address"><?php echo $fileItems[4]; ?></textarea>
             </td>
         </tr>
         <tr>
             <td>
                 <label for="city">City</label> <br />
-                <input type="text" name="city">
+                <input type="text" name="city" value="<?php echo $fileItems[5]; ?>">
             </td>
         </tr>
         <tr>
             <td>
                 <label for="country">Country</label> <br />
-                 <input type="text" name="country">
+                 <input type="text" name="country" value="<?php echo $fileItems[6]; ?>">
             </td>
         </tr>
         <tfoot>
