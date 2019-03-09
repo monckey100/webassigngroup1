@@ -13,6 +13,8 @@ class Page {
 
                 <!-- Bootstrap CSS -->
                 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+                <!-- Personal CSS -->
+                <link rel="stylesheet" href="css/css.css" />
 
                 <title><?php echo self::$title ;?></title>
             </head>
@@ -24,18 +26,18 @@ class Page {
     <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
         <table class="table">
         <tr>
-            <td><label for="fname">First Name</label>
+            <td><label for="fname">First Name</label> <br />
                 <input type="text" name="fname">
             </td>
-            <td><label for="lname">Last Name</label>
+            <td><label for="lname">Last Name</label> <br />
                 <input type="text" name="lname">
             </td>
         </tr>
         <tr>
-            <td><label for="email">Email Address</label>
+            <td><label for="email">Email Address</label> <br />
                 <input type="text" name="email">
             </td>
-            <td><label for="gender">Gender</label>
+            <td><label for="gender">Gender</label> <br />
                 <select name="gender">
                     <option value=male>Male</option>
                     <option value=female>Female</option>
@@ -43,25 +45,28 @@ class Page {
             </td>
         </tr>
         <tr>
-            <td rowspan=3><label for="address">Stress Address</label>
+            <td rowspan=3><label for="address">Stress Address</label> <br />
                 <textarea class="text" cols="20" rows ="2" name="address"></textarea>
             </td>
         </tr>
         <tr>
             <td>
-                <label for="city">City</label>
+                <label for="city">City</label> <br />
                 <input type="text" name="city">
             </td>
         </tr>
         <tr>
             <td>
-                <label for="country">Country</label>
+                <label for="country">Country</label> <br />
                  <input type="text" name="country">
             </td>
         </tr>
         <tfoot>
             <tr>
-                <td><input type="submit" name="submit" value="Previous"> <input type="submit" name="submit" value="Save"> <input type="submit" name="submit" value="Delete"> <input type="submit" name="submit" value="Next"></td>
+                <td><input type="submit" name="submit" value="Previous" id="prev" >
+                <input type="submit" name="submit" value="Save" id="sav" >
+                <input type="submit" name="submit" value="Delete" id="del" >
+                <input type="submit" name="submit" value="Next" id="nxt" ></td>
             </tr>
         </tfoot>
         </table>

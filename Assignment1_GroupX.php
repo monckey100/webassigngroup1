@@ -7,7 +7,7 @@ require("inc/Page.class.php");
 require("inc/Person.class.php");
 require("inc/Validation.class.php");
 
-Page::$title = "Assignment 1 - Group X";
+Page::$title = "Assignment #1 - Group X";
 Page::header();
 Page::form();
 Page::footer();
