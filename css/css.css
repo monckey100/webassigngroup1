@@ -1,0 +1,37 @@
+.table {
+    width: 50%;
+}
+
+.table td {
+    border: none;
+}
+
+.table input[type=text], .table textarea, .table select {
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid gainsboro;
+}
+
+.table textarea {
+    min-height: 110px;
+}
+
+input[type=submit] {
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid gainsboro;
+    min-height: 50px;
+    min-width: 100px;
+}
+
+input[type=submit]#sav {
+    background-color: darkturquoise;
+    border: 1px solid darkturquoise;
+    color: white;
+}
+
+input[type=submit]#del {
+    background-color: crimson;
+    border: 1px solid crimson;
+    color: white;
+}
