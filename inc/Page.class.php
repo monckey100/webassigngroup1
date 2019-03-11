@@ -22,43 +22,43 @@ class Page {
                 <h1><?php echo self::$title ;?></h1>
 <?php
     }
-    static function form($fileItems) { ?>
+    static function form($Person) { ?>
     <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
         <table class="table">
         <tr>
             <td><label for="fname">First Name</label> <br />
-                <input type="text" name="fname" value="<?php echo $fileItems['firstName']; ?>">
+                <input type="text" name="fname" value="<?php echo $Person->getFirstName(); ?>">
             </td>
             <td><label for="lname">Last Name</label> <br />
-                <input type="text" name="lname" value="<?php echo $fileItems['lastName']; ?>">
+                <input type="text" name="lname" value="<?php echo $Person->getLastName(); ?>">
             </td>
         </tr>
         <tr>
             <td><label for="email">Email Address</label> <br />
-                <input type="text" name="email" value="<?php echo $fileItems['email']; ?>">
+                <input type="text" name="email" value="<?php echo $Person->getEmail(); ?>">
             </td>
             <td><label for="gender">Gender</label> <br />
                 <select name="gender">
-                    <option value=male <?php if($fileItems['gender'] == "Male") { echo 'selected';} ?>>Male</option>
-                    <option value=female <?php if($fileItems['gender'] == "Female") { echo 'selected';} ?>>Female</option>
+                    <option value=male <?php if($Person->getGender() === 0) { echo 'selected';} ?>>Male</option>
+                    <option value=female <?php if($Person->getGender() !== 0) { echo 'selected';} ?>>Female</option>
                 </select>
             </td>
         </tr>
         <tr>
             <td rowspan=3><label for="address">Stress Address</label> <br />
-                <textarea class="text" cols="20" rows ="2" name="address"><?php echo $fileItems['address']; ?></textarea>
+                <textarea class="text" cols="20" rows ="2" name="address"><?php echo $Person->getAddress(); ?></textarea>
             </td>
         </tr>
         <tr>
             <td>
                 <label for="city">City</label> <br />
-                <input type="text" name="city" value="<?php echo $fileItems['city']; ?>">
+                <input type="text" name="city" value="<?php echo $Person->getCity(); ?>">
             </td>
         </tr>
         <tr>
             <td>
                 <label for="country">Country</label> <br />
-                 <input type="text" name="country" value="<?php echo $fileItems['country']; ?>">
+                 <input type="text" name="country" value="<?php echo $Person->getCountry(); ?>">
             </td>
         </tr>
         </table>
@@ -66,6 +66,7 @@ class Page {
         <input type="submit" name="submit" value="Save" id="sav" >
         <input type="submit" name="submit" value="Delete" id="del" >
         <input type="submit" name="submit" value="Next" id="nxt" >
+        <input type="hidden" name="hiddenID" value="<?php echo $_POST["hiddenID"]; ?>">
     </form>
 
     <?php }

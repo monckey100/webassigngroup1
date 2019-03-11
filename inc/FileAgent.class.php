@@ -25,9 +25,9 @@ class FileAgent {
             INPUT: email,firstname,lastname,gender,address,city,country\nemail,firstname...
             OUTPUT: $lines[0][6] == country;
         */
-        $lines = explode("\n",$myfile);
+        $lines = explode(PHP_EOL,$myfile);
         foreach ($lines as &$line) {
-            $line = explode(",",$line);
+            $line = explode(",",str_replace(array("\n", "\r"), '', $line));
         }
        return $lines; 
     }
