@@ -10,9 +10,11 @@ require("inc/Validation.class.php");
 $fileContents = FileAgent::read(DB_FILE);
 $fileContents = FileAgent::parse($fileContents);
 
+$person = Person::createPersons($fileContents);
+
 Page::$title = "Assignment #1 - Group X";
 Page::header();
-Page::form($fileContents[1]);
+Page::form($person);
 Page::footer();
 
 ?>

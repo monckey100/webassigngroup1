@@ -27,38 +27,38 @@ class Page {
         <table class="table">
         <tr>
             <td><label for="fname">First Name</label> <br />
-                <input type="text" name="fname" value="<?php echo $fileItems[1]; ?>">
+                <input type="text" name="fname" value="<?php echo $fileItems['firstName']; ?>">
             </td>
             <td><label for="lname">Last Name</label> <br />
-                <input type="text" name="lname" value="<?php echo $fileItems[2]; ?>">
+                <input type="text" name="lname" value="<?php echo $fileItems['lastName']; ?>">
             </td>
         </tr>
         <tr>
             <td><label for="email">Email Address</label> <br />
-                <input type="text" name="email" value="<?php echo $fileItems[0]; ?>">
+                <input type="text" name="email" value="<?php echo $fileItems['email']; ?>">
             </td>
             <td><label for="gender">Gender</label> <br />
                 <select name="gender">
-                    <option value=male <?php if($fileItems[3] == "Male") { echo 'selected';} ?>>Male</option>
-                    <option value=female <?php if($fileItems[3] == "Female") { echo 'selected';} ?>>Female</option>
+                    <option value=male <?php if($fileItems['gender'] == "Male") { echo 'selected';} ?>>Male</option>
+                    <option value=female <?php if($fileItems['gender'] == "Female") { echo 'selected';} ?>>Female</option>
                 </select>
             </td>
         </tr>
         <tr>
             <td rowspan=3><label for="address">Stress Address</label> <br />
-                <textarea class="text" cols="20" rows ="2" name="address"><?php echo $fileItems[4]; ?></textarea>
+                <textarea class="text" cols="20" rows ="2" name="address"><?php echo $fileItems['address']; ?></textarea>
             </td>
         </tr>
         <tr>
             <td>
                 <label for="city">City</label> <br />
-                <input type="text" name="city" value="<?php echo $fileItems[5]; ?>">
+                <input type="text" name="city" value="<?php echo $fileItems['city']; ?>">
             </td>
         </tr>
         <tr>
             <td>
                 <label for="country">Country</label> <br />
-                 <input type="text" name="country" value="<?php echo $fileItems[6]; ?>">
+                 <input type="text" name="country" value="<?php echo $fileItems['country']; ?>">
             </td>
         </tr>
         </table>
