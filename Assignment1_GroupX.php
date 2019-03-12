@@ -19,6 +19,7 @@ if(Validation::hasPost()) {
     if($_POST["submit"] === "Save") {
         $errors = Validation::hasErrors();
         if(!$errors){
+            Validation::cleanPOST();
             $Person = new Person(
                 $_POST["email"],
                 $_POST["fname"],

@@ -19,6 +19,7 @@
             }
             return true;
         }
+        // validation for the inputs
         static function checkPost(){
             if(isset($_POST['fname']) && strlen($_POST['fname']) == 0){
                 self::addError('Please, First Name is a required field!');
@@ -40,6 +41,12 @@
             }
             if(isset($_POST['country']) && strlen($_POST['country']) == 0){
                 self::addError('Please, Country is a required field!');
+            }
+        }
+        // function to remove special chars on the inputs
+        static function cleanPOST(){
+            foreach ($_POST as $data) {
+                $data = preg_replace('/[^A-Za-z0-9\-]/', '', $_POST['fname']); // Removes special chars.
             }
         }
     }
