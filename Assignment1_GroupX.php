@@ -11,25 +11,27 @@ require("inc/Validation.class.php");
 Book::cleanArray(FileAgent::parse(FileAgent::read(DB_FILE)));
 Page::$title = "Assignment #1 - Group X";
 Page::header();
-// echo "<pre>";
-// var_dump(Book::$array);
-// echo "</pre>";
 if(Validation::hasPost()) {
     if($_POST["submit"] === "Delete") {
         Book::deletePerson(Book::getIndex());
         Book::saveBook();
     }
     if($_POST["submit"] === "Save") {
-        $Person = new Person(
-            $_POST["email"],
-            $_POST["fname"],
-            $_POST["lname"],
-            $_POST["gender"],
-            $_POST["address"],
-            $_POST["city"],
-            $_POST["country"]
-        );
-        Book::updateBook($Person);
+        $errors = Validation::hasErrors();
+        if(!$errors){
+            $Person = new Person(
+                $_POST["email"],
+                $_POST["fname"],
+                $_POST["lname"],
+                $_POST["gender"],
+                $_POST["address"],
+                $_POST["city"],
+                $_POST["country"]
+            );
+            Book::updateBook($Person);
+        } else {
+            Page::printErrors($errors);
+        }
     }
 }
 Page::form(Book::getPerson(Book::getIndex()));

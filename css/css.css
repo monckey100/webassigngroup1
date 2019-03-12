@@ -40,3 +40,10 @@ input[type=submit]#del {
     border: 1px solid crimson;
     color: white;
 }
+
+ul {
+    background-color: indianred;
+    color: white;
+    width: 50%;
+    border-radius: 5px;
+}

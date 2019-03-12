@@ -71,6 +71,14 @@ class Page {
 
     <?php }
 
+    static function printErrors($errors) {
+        echo "<ul>";
+        foreach($errors as $error) {
+            echo "<li>" . $error . "</li>";
+        }
+        echo "</ul>";
+    }
+
     static function footer() { ?>
                 <!-- Optional JavaScript -->
                 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
