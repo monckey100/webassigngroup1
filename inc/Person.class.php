@@ -10,6 +10,8 @@ class Person {
     private $address;
     private $city;
     private $country; 
+    
+    // Create a default contructor
     function __construct($email,$fname,$lname,$gender,$address,$city,$country) {
         $this->email = $email;
         $this->fname = $fname;
@@ -20,6 +22,7 @@ class Person {
         $this->country = $country;
     }
     
+    // Get the values and save on the variables
     function getEmail() { 
         return $this->email; 
     } 

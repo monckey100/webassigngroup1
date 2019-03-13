@@ -1,12 +1,15 @@
 <?php 
 class FileAgent {
 
+    // read the file
     static function read($fileName)    {
         $myfile = fopen($fileName, "r") or die("Unable to open file!");
         $m = fread($myfile,filesize($fileName));
         fclose($myfile);
         return $m;
     }
+
+    // write or append on the file, deppendin of the paramenters passed
     static function write($fileName,$contents,$doappend = false) {
         /*
             INPUT: filename, expected string, should we append to end of file
@@ -20,6 +23,8 @@ class FileAgent {
         fclose($myfile);
         return true; //file wrote.
     }
+
+    // parse the file
     static function parse($myfile) {
         /*
             INPUT: email,firstname,lastname,gender,address,city,country\nemail,firstname...

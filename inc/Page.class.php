@@ -3,6 +3,7 @@
 class Page {
     public static $title = "";
 
+    // create the header with the title
     static function header() { ?>
         <!doctype html>
         <html lang="en">
@@ -22,6 +23,7 @@ class Page {
                 <h1><?php echo self::$title ;?></h1>
 <?php
     }
+    // create the form, get the data and include on the inputs
     static function form($Person) { ?>
     <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
         <table class="table">
@@ -71,6 +73,7 @@ class Page {
 
     <?php }
 
+    // print the errors if they exist on the screen
     static function printErrors($errors) {
         echo "<ul>";
         foreach($errors as $error) {
@@ -79,6 +82,7 @@ class Page {
         echo "</ul>";
     }
 
+    // the footer of the page
     static function footer() { ?>
                 <!-- Optional JavaScript -->
                 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

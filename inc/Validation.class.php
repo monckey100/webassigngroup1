@@ -1,6 +1,8 @@
 <?php 
     class Validation {
         public static $errors;
+        
+        // Verify if exist any error
         static function hasErrors() {
             self::checkPost();
             if(empty(self::$errors))
@@ -8,9 +10,13 @@
             else
                 return self::$errors;
         }
+
+        // Add the existing error in the array
         static function addError($err) {
             self::$errors[] = $err;
         }
+
+        // Verify if submit exist
         static function hasPost($required = false) {
             if(!isset($_POST["submit"])) {
                 if($required)
@@ -19,6 +25,7 @@
             }
             return true;
         }
+
         // validation for the inputs
         static function checkPost(){
             if(isset($_POST['fname']) && strlen($_POST['fname']) == 0){
@@ -43,6 +50,7 @@
                 self::addError('Please, Country is a required field!');
             }
         }
+
         // function to remove special chars on the inputs
         static function cleanPOST(){
             foreach ($_POST as $data) {

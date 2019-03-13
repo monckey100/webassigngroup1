@@ -1,5 +1,6 @@
 <?php
 
+// get the files required for the program
 require("inc/config.inc.php");
 require("inc/Book.class.php");
 require("inc/FileAgent.class.php");
@@ -7,7 +8,7 @@ require("inc/Page.class.php");
 require("inc/Person.class.php");
 require("inc/Validation.class.php");
 
-
+// Core of the program
 Book::cleanArray(FileAgent::parse(FileAgent::read(DB_FILE)));
 Page::$title = "Assignment #1 - Group X";
 Page::header();
