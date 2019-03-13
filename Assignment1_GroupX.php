@@ -14,12 +14,15 @@ Page::$title = "Assignment #1 - Group X";
 Page::header();
 if(Validation::hasPost()) {
     if($_POST["submit"] === "Delete") {
-        Book::deletePerson(Book::getIndex());
-        Book::saveBook();
+        if(count(Book::$array) > 2) { //must hav at least one entry besides template at top.
+            Book::deletePerson(Book::getIndex());
+            Book::saveBook();
+        } else {
+            Validation::addError("Error: At least one entry must exist!");
+        }
     }
     if($_POST["submit"] === "Save") {
-        $errors = Validation::hasErrors();
-        if(!$errors){
+        if(!Validation::hasErrors()) {
             Validation::cleanPOST();
             $Person = new Person(
                 $_POST["email"],
@@ -31,11 +34,10 @@ if(Validation::hasPost()) {
                 $_POST["country"]
             );
             Book::updateBook($Person);
-        } else {
-            Page::printErrors($errors);
         }
     }
 }
+Page::printErrors(Validation::$errors);
 Page::form(Book::getPerson(Book::getIndex()));
 Page::footer();
 

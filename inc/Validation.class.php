@@ -53,8 +53,8 @@
 
         // function to remove special chars on the inputs
         static function cleanPOST(){
-            foreach ($_POST as $data) {
-                $data = preg_replace('/[^A-Za-z0-9\-]/', '', $_POST['fname']); // Removes special chars.
+            foreach ($_POST as &$data) {
+                $data = preg_replace(array('/[\<\>\/\,\?"\`\|]/',"/'/"), '', $data); // Removes special unsafe characters. later versions we can just encode + decode.
             }
         }
     }

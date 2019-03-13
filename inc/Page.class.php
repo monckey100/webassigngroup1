@@ -75,11 +75,13 @@ class Page {
 
     // print the errors if they exist on the screen
     static function printErrors($errors) {
-        echo "<ul>";
-        foreach($errors as $error) {
-            echo "<li>" . $error . "</li>";
+        if(!empty($errors)) {
+            echo "<ul>";
+            foreach($errors as $error) {
+                echo "<li>" . $error . "</li>";
+            }
+            echo "</ul>";
         }
-        echo "</ul>";
     }
 
     // the footer of the page
